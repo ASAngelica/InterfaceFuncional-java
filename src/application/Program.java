@@ -10,6 +10,7 @@ public class Program {
 	public static void main(String[] args) {
 		
 		List<Product> list = new ArrayList<>();
+		
 		list.add(new Product("Tv", 900.00));
 		list.add(new Product("Mouse", 50.00));
 		list.add(new Product("Tablet", 350.50));
@@ -17,10 +18,7 @@ public class Program {
 		
 		double min = 100.0;
 		
-		Predicate<Product> pred = p -> p.getPrice() >= min;
-		
-		//Method reference
-		list.removeIf(pred);
+		list.removeIf(p -> p.getPrice() >= min);
 		
 		for(Product p : list) {
 			System.out.println(p);
